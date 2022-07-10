@@ -1,0 +1,5 @@
+<view class="demo-page">
+  <image class="logo" mode="scaleToFill" src="/plugin.png" />
+  <view class="title">智能导诊插件: </view>
+  <navigator url="plugin://myPlugin/smart-examin" class="nav">智能导诊</navigator>
+</view>

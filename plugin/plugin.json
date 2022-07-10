@@ -1,0 +1,14 @@
+{
+  "publicComponents": {
+    
+  },
+  "publicPages": {
+    "smart-examin": "pages/index/index",
+    "department": "pages/department/index"
+  },
+  "pages": [
+    "pages/index/index",
+    "pages/department/index"
+  ],
+  "main": "index"
+}

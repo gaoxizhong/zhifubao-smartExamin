@@ -1,0 +1,60 @@
+ <view class="content-box" style="height:{{viewHeight}}px;">
+    <!-- 头部提示模块 开始 -->
+    <view class="header-box">
+      <view class="header-title">菁苗健康科技智能导诊</view>
+      <view class="header-text">温馨提示：本服务会根据您提供的患者信息为您推荐就诊科室，避免因挂错号而浪费就诊时间。</view>
+    </view>
+    <!-- 头部提示模块 结束 -->
+
+    <!-- 聊天区域 开始 -->
+    <view class="message" style="overflow: auto;" id="msg_end">
+      <view>
+        <view a:for="{{QAList}}" :key="index">
+          <view class="{{item.type == 1?'send':'show'}}">
+            <!-- <view class="time">{{item.time}}</view> -->
+            <view class="msg">
+              <image mode="scaleToFill" src="{{item.type == 1?'../../kefu.png':'../../img-user.png'}}" class="msg-avatar"/>
+              <view class="msg-p">{{item.text}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="support-box"><text style="padding:0 6px;font-size:13px;">菁苗健康</text>提供技术支持</view>
+    </view>
+    <!-- 聊天区域 结束 -->
+
+    <!-- 底部输入/选择区域 开始 -->
+    <view class="footer">
+      <view class="footer-input" a:if="{{is_input}}">
+        <view  class="input-text">
+          <input class="search-input" value="{{input_text}}" onInput="bindKeyInput" placeholder="输入头痛、胃痛、烧心等症状" />
+        </view>
+        <button class="input-button" onTap="clickButton">发送</button>
+      </view>
+      <!-- 底部选项按钮 开始-->
+
+      <view class="footer-btnList" a:else>
+        <!-- 年龄 开始 -->
+        <view a:if="{{is_age}}">
+          <view class="footer-btnList-btn  {{is_click == index?'hoverclass':''}}" data-n="{{item}}" data-index="{{index}}" onTap="clickBtn" a:for="{{infoConfig.age_range}}" :key="index">{{item}}</view>
+        </view>
+        <!-- 年龄 结束 -->
+
+        <!-- 性别 开始 -->
+        <view a:if="{{is_gender}}">
+          <view class="footer-btnList-btn {{is_click == index?'hoverclass':''}}" data-n="{{item}}" data-index="{{index}}" onTap="clickGender" a:for="{{infoConfig.gender}}" :key="index">{{item}}</view>
+        </view>
+        <!-- 性别 结束 -->
+
+        <!-- 症状选项 开始 -->
+        <view a:if="{{is_symptom}}">
+          <view class="footer-btnList-btn {{is_click == index?'hoverclass':''}}" data-n="{{item}}" data-index="{{index}}" onTap="clickSymptom" a:for="{{symptomList}}" :key="index">{{item}}</view>
+        </view>
+        <!-- 症状选项 结束 -->
+
+
+      </view>
+      <!-- 底部选项按钮 结束-->
+    </view>
+    <!-- 底部输入/选择区域 结束 -->
+  </view>

@@ -1,0 +1,40 @@
+<view class="content-box">
+  <!-- 头部提示模块 开始 -->
+  <view class="header-box">
+    <view class="header-title">为您推荐科室</view>
+    <view class="header-text">通过分析您的回答，建议患者优先去以下科室挂号就诊。（声明：奔结果仅作为建议，不能代替职业医生的诊断）</view>
+  </view>
+  <!-- 头部提示模块 结束 -->
+  <view class="pingjia-box">请您对返回科室的结果做出评价：<text style="color: red;padding:4rpx 12rpx;"onTap="clickpingjia">去评价</text></view>
+  <!-- 科室列表模块 开始 -->
+  <view class="depList-box">
+    <view class="depList-items" a:for="{{guidanceList}}" :key="index">
+      <view class="depListitem-m">{{item}}</view>
+      <view class="depListitem-r" onTap="clickItem">挂号</view>
+    </view>
+  </view>
+  <!-- 科室列表模块 结束 -->
+</view>
+<view class="evaluate-box" a:if="{{is_evaluate}}">
+  <view class="marsk-box" onTap="clickmarsk"></view>
+  <view class="evaluate-div">
+    <view class="evaluate-div-title">请评价</view>
+    <view class="evaluate-btnbox">
+      <view class="itembtn1 evaluate-itembtn" type="warn" data-num="1" onTap="clicksatisfy">不满意</view>
+      <view class="itembtn2 evaluate-itembtn" type="primary" data-num="0" onTap="clicksatisfy">满意</view>
+    </view>
+  </view>
+</view>
+<view class="evascucc-box" a:if="{{is_evascucc}}">
+  <view class="evascucc-result">
+    <view class="el-result__icon">
+      <image mode="scaleToFill" src="../../S1.jpg" class="result__icon_img"/>
+    </view>
+    <view class="el-result__title">
+      <text class="result__title_p">评价成功</text>
+    </view>
+    <view class="el-result__subtitle">
+      <text class="result__title_p">感谢您的反馈！</text>
+    </view>
+  </view>
+</view>
