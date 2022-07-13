@@ -27,7 +27,7 @@ Page({
     let getViewportSize = my.getSystemInfoSync();
     let viewHeight = getViewportSize.windowHeight;
     this.setData({
-      viewHeight
+      viewHeight: Number(viewHeight - 100) 
     })
   },
   onReady() {
@@ -36,9 +36,9 @@ Page({
   onShow() {
     // 页面显示
     this.setData({
+      QAList:[],
       input_text:'', // 输入症状
       curTime:'', //当前时间
-      QAList:[],
       is_input: true, // 初始输入框
       is_age: false,
       is_gender:false,
@@ -156,7 +156,12 @@ Page({
         is_age:true
       })
       // 滚动
-      that.getScrollH();
+      my.createSelectorQuery().select('#msg_end').boundingClientRect(function(rect){
+        console.log(rect)
+        let stop = rect.top;
+        stop.scrollTop = stop.scrollHeight;// 滚动高度
+        my.pageScrollTo({ scrollTop: Number(stop)})
+      }).exec()
     },1000)
     return
   },
@@ -164,8 +169,9 @@ Page({
   getScrollH(){
     let that = this;
     // 滚动
+    console.log('滚动')
     my.createSelectorQuery().select('#msg_end').boundingClientRect(function(rect){
-      console.log(rect.top)
+      console.log(rect)
       let stop = rect.top;
       stop.scrollTop = stop.scrollHeight;// 滚动高度
       my.pageScrollTo({ scrollTop: Number(stop)})

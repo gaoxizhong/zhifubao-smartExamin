@@ -35,9 +35,10 @@ Page({
       path: 'pages/index/index',
     };
   },
-  // navigateToPlugin() {
-  //   my.navigateTo({
-  //     url: 'plugin://myPlugin/smart-examin',
-  //   });
-  // }
+  // 跳转插件
+  navigateToPlugin() {
+    my.navigateTo({
+      url: 'plugin://myPlugin/smart-examin',
+    });
+  }
 });

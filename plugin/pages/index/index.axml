@@ -19,13 +19,13 @@
           </view>
         </view>
       </view>
-      <view class="support-box"><text style="padding:0 6px;font-size:13px;">菁苗健康</text>提供技术支持</view>
     </view>
     <!-- 聊天区域 结束 -->
 
     <!-- 底部输入/选择区域 开始 -->
     <view class="footer">
-      <view class="footer-input" a:if="{{is_input}}">
+      <view class="support-box" a:if="{{ is_input || is_age || is_gender }}"><text style="padding:0 6px;font-size:13px;">菁苗健康</text>提供技术支持</view>
+      <view class="footer-items footer-input" a:if="{{is_input}}">
         <view  class="input-text">
           <input class="search-input" value="{{input_text}}" onInput="bindKeyInput" placeholder="输入头痛、胃痛、烧心等症状" />
         </view>
@@ -33,7 +33,7 @@
       </view>
       <!-- 底部选项按钮 开始-->
 
-      <view class="footer-btnList" a:else>
+      <view class="footer-items footer-btnList" style="max-height:{{ (viewHeight/4 *3) }}px;" a:else>
         <!-- 年龄 开始 -->
         <view a:if="{{is_age}}">
           <view class="footer-btnList-btn  {{is_click == index?'hoverclass':''}}" data-n="{{item}}" data-index="{{index}}" onTap="clickBtn" a:for="{{infoConfig.age_range}}" :key="index">{{item}}</view>
