@@ -10,7 +10,7 @@
   <view class="depList-box">
     <view class="depList-items" a:for="{{guidanceList}}" :key="index">
       <view class="depListitem-m">{{item}}</view>
-      <view class="depListitem-r" onTap="clickItem">挂号</view>
+      <view class="depListitem-r" data-url="" data-id="" onTap="navigateToRegistered">挂号</view>
     </view>
   </view>
   <!-- 科室列表模块 结束 -->

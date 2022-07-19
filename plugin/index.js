@@ -1,6 +1,9 @@
-var data = require('./api/data')
-
+let appNavigater;
 module.exports = {
-  getData: data.getData,
-  setData: data.setData
-}
+  setAppNavigater(navigater) {
+    appNavigater = navigater;
+  },
+  getAppNavigater() {
+    return appNavigater;
+  },
+};

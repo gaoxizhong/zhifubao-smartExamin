@@ -1,3 +1,4 @@
+const { getAppNavigater } = require('../../index');
 Page({
   data() {
     return {
@@ -107,5 +108,33 @@ Page({
         console.log(res)
       },
     })
+  },
+  // 点击科室挂号
+  navigateToRegistered(e){
+    let url = e.currentTarget.dataset.url;
+    let id = e.currentTarget.dataset.id;
+    // 跳转宿主小程序
+    // const appNavigater = getAppNavigater();
+    // appNavigater({
+    //   url: '',
+    // });
+
+    // 跳转至其它小程序页面
+    const appIdRes = my.getParentAppIdSync();
+    let data = 'test';
+    my.navigateToMiniProgram({
+      appId: appIdRes,  // 宿主appid
+      path: '',
+      extraData: {
+        data1: data,
+      },
+      success: (res) => {
+        console.log(JSON.stringify(res));
+      },
+      fail: (res) => {
+        console.log(JSON.stringify(res));
+      },
+    });
+    return
   }
 });

@@ -2,7 +2,6 @@ var plugin = requirePlugin("myPlugin");
 
 Page({
   onLoad(query) {
-    plugin.getData();
     // 页面加载
     console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
   },
