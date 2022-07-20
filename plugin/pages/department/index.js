@@ -112,7 +112,8 @@ Page({
   // 点击科室挂号
   navigateToRegistered(e){
     let url = e.currentTarget.dataset.url;
-    let id = e.currentTarget.dataset.id;
+    let appId = e.currentTarget.dataset.appId;
+    let department = e.currentTarget.dataset.department;
     // 跳转宿主小程序
     // const appNavigater = getAppNavigater();
     // appNavigater({
@@ -120,11 +121,11 @@ Page({
     // });
 
     // 跳转至其它小程序页面
-    const appIdRes = my.getParentAppIdSync();
-    let data = 'test';
+    const appIdRes = my.getParentAppIdSync(); // 宿主appid
+    let data = '';
     my.navigateToMiniProgram({
-      appId: appIdRes,  // 宿主appid
-      path: '',
+      appId: appId,  
+      path: url,
       extraData: {
         data1: data,
       },
