@@ -51,7 +51,7 @@
           <view class="footer-btnList-btn {{is_click == index?'hoverclass':''}}" data-n="{{item}}" data-index="{{index}}" onTap="clickSymptom" a:for="{{symptomList}}" :key="index">{{item}}</view>
         </view>
         <!-- 症状选项 结束 -->
-
+        <view  a:if="{{is_symptom}}" style="width: 100%;height:30rpx;"></view>
 
       </view>
       <!-- 底部选项按钮 结束-->
