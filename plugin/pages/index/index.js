@@ -60,6 +60,81 @@ Page({
       text:'请问您有什么不适症状？',
       time: this.data.curTime
     })
+    QAList.push({
+      type:1,
+      text:'请问您有什么不适症状？',
+      time: this.data.curTime
+    })
+    QAList.push({
+      type:1,
+      text:'请问您有什么不适症状？',
+      time: this.data.curTime
+    })
+    QAList.push({
+      type:1,
+      text:'请问您有什么不适症状？',
+      time: this.data.curTime
+    })
+    QAList.push({
+      type:1,
+      text:'请问您有什么不适症状？',
+      time: this.data.curTime
+    })
+    QAList.push({
+      type:1,
+      text:'请问您有什么不适症状？',
+      time: this.data.curTime
+    })
+    QAList.push({
+      type:1,
+      text:'请问您有什么不适症状？',
+      time: this.data.curTime
+    })
+    QAList.push({
+      type:1,
+      text:'请问您有什么不适症状？',
+      time: this.data.curTime
+    })
+    QAList.push({
+      type:1,
+      text:'请问您有什么不适症状？',
+      time: this.data.curTime
+    })
+    QAList.push({
+      type:1,
+      text:'请问您有什么不适症状？',
+      time: this.data.curTime
+    })
+    QAList.push({
+      type:1,
+      text:'请问您有什么不适症状？',
+      time: this.data.curTime
+    })
+    QAList.push({
+      type:1,
+      text:'请问您有什么不适症状？',
+      time: this.data.curTime
+    })
+    QAList.push({
+      type:1,
+      text:'请问您有什么不适症状？',
+      time: this.data.curTime
+    })
+    QAList.push({
+      type:1,
+      text:'请问您有什么不适症状？',
+      time: this.data.curTime
+    })
+    QAList.push({
+      type:1,
+      text:'请问您有什么不适症状？',
+      time: this.data.curTime
+    })
+    QAList.push({
+      type:1,
+      text:'请问您有什么不适症状？',
+      time: this.data.curTime
+    })
     this.setData({
       QAList,
     })
